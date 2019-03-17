@@ -5,8 +5,14 @@ This program converts a temperature from fahrenheit to celsius, or from celsius 
 ![temperature converter page]()
 
 ## Getting Started
+```
+$git clone https://github.com/silvestreluna/temperature-converter
+```
 
 ## Prerequisites
+```
+  $npm install -g http-server
+```
 
 ## Running
 Browse to `temperature-converter` directory and run http server.
