@@ -9,20 +9,25 @@
 </head>
 <body>
     <div id="container">   
+        <!--Input field-->
         <input type="text" id="tempInput" name="temp-input-field" placeholder="Enter temperature">
         <div>
-            <input type="radio" name="temp-option" id="celsius" checked="checked">
-            <label for="celsius">C &#176;</label>
+            <!--Radio buttons-->
+            <input type="radio" name="temp-option" id="celsius">
+            <label for="celsius">&#176; C</label>
 
             <input type="radio" name="temp-option" id="fahrenheit">
-            <label for="fahrenheit">F &#176;</label>
+            <label for="fahrenheit">&#176; F</label>
         </div>
         <div>
+            <!--Clear Button-->
             <button id="clearBtn">Clear</button>
+            <!-- Convert Button-->
             <button id="convertBtn">Convert</button>
-        </div id="tempOutput">
+        </div>
+
             <!--Temperature will output here.-->
-        <div>
+        <div id="tempOutput">
         </div>
     </div>    
     <script src="./main.js"></script>
