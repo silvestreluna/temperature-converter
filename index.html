@@ -8,7 +8,23 @@
     <link rel="stylesheet" href="./main.css">
 </head>
 <body>
-    <h1>Hello</h1>
+    <div id="container">   
+        <input type="text" id="tempInput" name="temp-input-field" placeholder="Enter temperature">
+        <div>
+            <input type="radio" name="temp-option" id="celsius" checked="checked">
+            <label for="celsius">C &#176;</label>
+
+            <input type="radio" name="temp-option" id="fahrenheit">
+            <label for="fahrenheit">F &#176;</label>
+        </div>
+        <div>
+            <button id="clearBtn">Clear</button>
+            <button id="convertBtn">Convert</button>
+        </div id="tempOutput">
+            <!--Temperature will output here.-->
+        <div>
+        </div>
+    </div>    
     <script src="./main.js"></script>
 </body>
 </html>
