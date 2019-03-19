@@ -4,42 +4,34 @@ const printToDom = (divId, textToPrint) => {
   };
 
 const selectButton = () => {
-    document.getElementById('convertBtn').addEventListener('click', toCelsius);
-    document.getElementById('convertBtn').addEventListener('click', toFahrenheit);
-
-    document.getElementById('celsius').addEventListener('click', determineConverter);
-    document.getElementById('fahrenheit').addEventListener('click', determineConverter);
+    document.getElementById('convertBtn').addEventListener('click', determineConverter);
 };
 
-// const test = () => {
-//     const inputValue = document.getElementById('tempInput').value;
-
-//     printToDom('tempOutput', `<h3>${inputValue}</h3>`);
-// };
-
-
-
 const toCelsius =  () => {
-    const inputValue = document.getElementById('tempInput').value;
+    const temp = document.getElementById('tempInput').value;
+    const toCelResult = (temp - 32 )/ 1.8;
+    
+    printToDom('tempOutput', `<h2>${toCelResult} degrees C</h2>`);
 
-    printToDom('tempOutput', `<h3>${inputValue} C</h3>`);
-
-}
+};
 
 const toFahrenheit =  () => {
-    const inputValue = document.getElementById('tempInput').value;
+    const temp = document.getElementById('tempInput').value;
+    const toFahResult = (temp * 1.8) + 32;
 
-    printToDom('tempOutput', `<h3>${inputValue} F</h3>`);
+    printToDom('tempOutput', `<h2>${toFahResult} degrees F</h2>`);
 
-}
+};
 
 
-const determineConverter = (e) => {
-   // const inputValue = document.getElementById('tempInput').value;
+const determineConverter = () => {
+   const targetIdC = document.getElementById('celsius').checked;
+   const targetIdF = document.getElementById('fahrenheit').checked;
 
-    if (e.target.id === 'celsius') {
+    if ( targetIdC === true) {
         toCelsius();
-    } else if (e.target.id === 'fahrenheit') {
+    }  
+    else if (targetIdF=== true) {
         toFahrenheit();
     };
 };
@@ -48,6 +40,7 @@ const determineConverter = (e) => {
 const init = () => {
 
     selectButton();
+
 };
 
 init();
