@@ -5,6 +5,7 @@ const printToDom = (divId, textToPrint) => {
 
 const selectButton = () => {
     document.getElementById('convertBtn').addEventListener('click', determineConverter);
+    document.getElementById('clearBtn').addEventListener('click', clear);
 };
 
 const toCelsius =  () => {
@@ -21,6 +22,15 @@ const toFahrenheit =  () => {
 
     printToDom('tempOutput', `<h2>${toFahResult} degrees F</h2>`);
 
+};
+
+const clear = () => {
+    document.getElementById('tempInput').value = '';
+    document.getElementById('tempOutput').innerHTML = '';
+    document.getElementById('celsius').checked = false;
+    document.getElementById('fahrenheit').checked = false;
+
+    
 };
 
 
