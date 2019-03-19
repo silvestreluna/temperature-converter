@@ -8,11 +8,31 @@ const selectButton = () => {
     document.getElementById('clearBtn').addEventListener('click', clear);
 };
 
+
+const domStringBuilder = (finalTemp, unit) => { 
+    let divClass = ''
+    if (finalTemp > 90 && unit === 'F') {
+        divClass = 'red';
+    } else if (finalTemp > 32 && unit === "C") {
+        divClass = 'red';
+    } else if (finalTemp < 32 && unit === "F") {
+        divClass = 'blue';
+    } else if (finalTemp < 0 && unit === "C") {
+        divClass = 'blue';
+    } else {
+        divClass = 'green';
+    }
+    let buildText = `<h2 class="${divClass}">${finalTemp} degrees ${unit}</h2>`
+    
+    printToDom('tempOutput', buildText);
+};
+
+
 const toCelsius =  () => {
     const temp = document.getElementById('tempInput').value;
     const toCelResult = (temp - 32 )/ 1.8;
     
-    printToDom('tempOutput', `<h2>${toCelResult.toFixed(2)} degrees C</h2>`);
+    domStringBuilder(toCelResult.toFixed(2), 'C');
 
 };
 
@@ -20,7 +40,7 @@ const toFahrenheit =  () => {
     const temp = document.getElementById('tempInput').value;
     const toFahResult = (temp * 1.8) + 32;
    
-    printToDom('tempOutput', `<h2>${toFahResult.toFixed(2)} degrees F</h2>`);
+    domStringBuilder(toFahResult.toFixed(2), 'F');
 
 };
 
