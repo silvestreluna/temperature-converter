@@ -12,15 +12,15 @@ const toCelsius =  () => {
     const temp = document.getElementById('tempInput').value;
     const toCelResult = (temp - 32 )/ 1.8;
     
-    printToDom('tempOutput', `<h2>${toCelResult} degrees C</h2>`);
+    printToDom('tempOutput', `<h2>${toCelResult.toFixed(2)} degrees C</h2>`);
 
 };
 
 const toFahrenheit =  () => {
     const temp = document.getElementById('tempInput').value;
     const toFahResult = (temp * 1.8) + 32;
-
-    printToDom('tempOutput', `<h2>${toFahResult} degrees F</h2>`);
+   
+    printToDom('tempOutput', `<h2>${toFahResult.toFixed(2)} degrees F</h2>`);
 
 };
 
