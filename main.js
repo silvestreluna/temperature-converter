@@ -7,19 +7,19 @@ const selectButton = () => {
     document.getElementById('convertBtn').addEventListener('click', determineConverter);
 };
 
-
-
 const toCelsius =  () => {
-    const inputValue = document.getElementById('tempInput').value;
+    const temp = document.getElementById('tempInput').value;
+    const toCelResult = (temp - 32 )/ 1.8;
     
-    printToDom('tempOutput', `<h3>${inputValue}&#176;C</h3>`);
+    printToDom('tempOutput', `<h2>${toCelResult} degrees C</h2>`);
 
 };
 
 const toFahrenheit =  () => {
-    const inputValue = document.getElementById('tempInput').value;
+    const temp = document.getElementById('tempInput').value;
+    const toFahResult = (temp * 1.8) + 32;
 
-    printToDom('tempOutput', `<h3>${inputValue}&#176;F</h3>`);
+    printToDom('tempOutput', `<h2>${toFahResult} degrees F</h2>`);
 
 };
 
