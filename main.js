@@ -1,14 +1,18 @@
+
+// This will print to the Dom
 const printToDom = (divId, textToPrint) => {
     const selectDiv = document.getElementById(divId);
     selectDiv.innerHTML = textToPrint;
   };
 
+  // selecting buttons and adding event listener.
 const selectButton = () => {
     document.getElementById('convertBtn').addEventListener('click', determineConverter);
     document.getElementById('clearBtn').addEventListener('click', clear);
 };
 
 
+// this will build what will print in the dom, plus conditional. 
 const domStringBuilder = (finalTemp, unit) => { 
     let divClass = ''
     if (finalTemp > 90 && unit === 'F') {
@@ -44,6 +48,7 @@ const toFahrenheit =  () => {
 
 };
 
+// clear button. 
 const clear = () => {
     document.getElementById('tempInput').value = '';
     document.getElementById('tempOutput').innerHTML = '';
@@ -66,11 +71,15 @@ const determineConverter = () => {
     };
 };
 
-
-
-
+// key up button. 
+const enterIsPressed = () => {document.addEventListener('keyup', (e)=>{
+    if (e.keyCode === 13) {
+        determineConverter();
+    }
+});
+}
 const init = () => {
-
+    enterIsPressed();
     selectButton();
 
 };
