@@ -34,18 +34,32 @@ const domStringBuilder = (finalTemp, unit) => {
 
 const toCelsius =  () => {
     const temp = document.getElementById('tempInput').value;
+    if (temp === '') {
+        Swal.fire({
+            type: 'error',
+            title: 'Oops...',
+            text: 'Temperature field is blank!'
+          })
+    } else {
     const toCelResult = (temp - 32 )/ 1.8;
     
     domStringBuilder(toCelResult.toFixed(2), 'C');
-
+    };
 };
 
 const toFahrenheit =  () => {
     const temp = document.getElementById('tempInput').value;
-    const toFahResult = (temp * 1.8) + 32;
-   
-    domStringBuilder(toFahResult.toFixed(2), 'F');
+    if (temp === '') {
+        Swal.fire({
+            type: 'error',
+            title: 'Oops...',
+            text: 'Temperature field is blank!'
+          })
+    } else {
 
+    const toFahResult = (temp * 1.8) + 32;
+    domStringBuilder(toFahResult.toFixed(2), 'F');
+    };
 };
 
 // clear button. 
