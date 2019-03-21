@@ -13,9 +13,7 @@ body {
     border: 2px solid gray;
     width: 350px;
     height: 400px;
-
     border-radius: 15px;
-    /* box-shadow: 3px 5px 3px rgb(47, 50, 50); */
     box-shadow: 0px 6px 0px #49545d, 10px 18px 15px rgba(0,0,0,.4);
     background-color: #DFDCE3;
 }
@@ -32,7 +30,6 @@ body {
     background-color: #cce5ff;
     border-color: #b8daff;
     color: #004085;
-
 }
 
 #tempOutput {
